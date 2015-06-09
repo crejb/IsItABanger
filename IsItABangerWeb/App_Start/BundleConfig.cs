@@ -23,9 +23,14 @@ namespace IsItABangerWeb
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/fullpage").Include(
+                "~/Scripts/bangersite.js",
+                "~/Scripts/jquery.fullPage.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/jquery.fullPage.css"));
         }
     }
 }
