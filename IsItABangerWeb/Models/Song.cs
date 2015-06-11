@@ -12,6 +12,8 @@ namespace IsItABangerWeb.Models
         public int ID { get; set; }
 
         public string Name { get; set; }
+
+        public string Artist { get; set; }
         
         [Required]
         [Range(0, 500)]
@@ -23,10 +25,14 @@ namespace IsItABangerWeb.Models
         public int Drops { get; set; }
 
         [Required]
+        [UIHint("YesNo")]
         public bool DropsAreDope { get; set; }
 
         [Required]
+        [UIHint("YesNo")]
         public bool HasAcousticInstruments { get; set; }
+
+        public bool IsItABanger { get; set; }
     }
 
     public class BangerDbContext : ApplicationDbContext

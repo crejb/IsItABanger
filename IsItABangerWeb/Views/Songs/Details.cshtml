@@ -4,11 +4,14 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+@{
+    string bgColour = Model.IsItABanger ? "green" : "red";
+    string bangerText = Model.IsItABanger ? "BANGER" : "NOT A BANGER";
+}
 
-<div>
-    <h4>Song</h4>
-    <hr />
+<h2>@bangerText</h2>
+
+<div style="background-color:@bgColour">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)

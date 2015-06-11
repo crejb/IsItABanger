@@ -14,6 +14,19 @@ namespace IsItABangerWeb.Controllers
     {
         private BangerDbContext db = new BangerDbContext();
 
+        private readonly IBangerCalculator _bangerCalculator;
+
+        public SongsController() :
+            this(new BangerCalculator(new HaverfordBangerStrategy()))
+        {
+
+        }
+
+        public SongsController(IBangerCalculator bangerCalculator)
+        {
+            _bangerCalculator = bangerCalculator;
+        }
+
         // GET: Songs
         public ActionResult Index()
         {
@@ -50,9 +63,11 @@ namespace IsItABangerWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                _bangerCalculator.SetBanger(song);
+
                 db.Songs.Add(song);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { Id = song.ID });
             }
 
             return View(song);

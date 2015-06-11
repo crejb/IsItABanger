@@ -1,0 +1,10 @@
+﻿@model bool?
+
+<fieldset>
+    @Html.RadioButtonFor(model => model, true, new { id = "radio-yes" })
+    @Html.Label("radio-yes", "Yes")
+
+    @Html.RadioButtonFor(model => model, false, new { id = "radio-no" })
+    @Html.Label("radio-no", "No")
+</fieldset>
+
