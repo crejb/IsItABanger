@@ -1,10 +1,11 @@
 ﻿@model IsItABangerWeb.Models.Song
 
 @{
+    Layout = "~/Views/Shared/_LayoutFullPage.cshtml";
     ViewBag.Title = "Home Page";
 }
 
-@using (Html.BeginForm("Create", "Songs", FormMethod.Post))
+@using (Html.BeginForm("Result", "Songs", FormMethod.Post))
 {
     
 @Html.AntiForgeryToken()

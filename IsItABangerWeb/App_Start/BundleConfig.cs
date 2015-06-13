@@ -24,7 +24,7 @@ namespace IsItABangerWeb
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/fullpage").Include(
-                "~/Scripts/bangersite.js",
+                "~/Scripts/bangerfullpage.js",
                 "~/Scripts/jquery.fullPage.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

@@ -186,7 +186,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bangersite.js" />
+    <Content Include="Scripts\bangerfullpage.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -240,10 +240,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Songs\Create.cshtml" />
     <Content Include="Views\Songs\Delete.cshtml" />
-    <Content Include="Views\Songs\Details.cshtml" />
     <Content Include="Views\Songs\Edit.cshtml" />
     <Content Include="Views\Songs\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\YesNo.cshtml" />
+    <Content Include="Views\Songs\Result.cshtml" />
+    <Content Include="Views\Shared\_LayoutSimple.cshtml" />
+    <Content Include="Views\Shared\_LayoutFullPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

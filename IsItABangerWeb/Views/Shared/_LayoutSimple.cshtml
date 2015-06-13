@@ -8,13 +8,14 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body style="background-color:@ViewBag.LayoutBackground">
     <div class="container">
         @RenderBody()
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/fullpage")
     @RenderSection("scripts", required: false)
 </body>
 </html>
