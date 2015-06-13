@@ -11,3 +11,28 @@ select,
 textarea {
     max-width: 280px;
 }
+
+body {
+  padding-top: 50px;
+}
+/*@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}*/
+
+/*#Banner {
+ top: 0;
+ position: fixed;
+ background-color: #fff;
+ height: 40px;
+ width: 100%;
+ z-index: 1030;
+}*/
+
+.h-stretch {
+    background-color:rebeccapurple;
+    position:absolute;
+    left:0;
+    right:0;
+}

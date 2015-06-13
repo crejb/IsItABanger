@@ -1,0 +1,15 @@
+﻿@model bool?
+
+
+@if (!Model.HasValue)
+{
+    <div>Not Set</div>
+}
+else if (Model.Value)
+{
+    <div>Yes</div>
+}
+else
+{
+    <div>No</div>
+}

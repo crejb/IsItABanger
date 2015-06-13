@@ -17,8 +17,12 @@
             <h1>Is It A Banger?</h1>
             <p>
                 <div class="row">
-                    <div class="col-md-6"><a class="btn btn-primary btn-lg banger-scroll-down">Start the test</a></div>
-                    <div class="col-md-6"><a class="btn btn-primary btn-lg">See the bangers</a></div>
+                    <div class="col-md-2">
+                        <a class="btn btn-primary btn-lg banger-scroll-down">Start the test</a>
+                    </div>
+                    <div class="col-md-2">
+                        @Html.ActionLink("See the bangers", "Index", "Songs", null, new { @class = "btn btn-primary btn-lg" })
+                    </div>
                 </div>
             </p>
         </div>

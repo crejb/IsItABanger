@@ -1,44 +1,42 @@
 ﻿@model IEnumerable<IsItABangerWeb.Models.Song>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "See all songs";
 }
 
-<h2>Index</h2>
-
-
-    <div class="center-block" style="text-align:center">
-        <h2>Index Yeah</h2>
-    </div>
-
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Song
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Bpm)
+            Artist
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Drops)
+            BPM
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DropsAreDope)
+            Drops
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HasAcousticInstruments)
+            Dope?
         </th>
-        <th></th>
+        <th>
+            Acoustic Instruments
+        </th>
+        <th>
+            Banger?
+        </th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    var rowClass = item.IsItABanger ? "success" : "danger";
+    <tr class="@rowClass">
         <td>
             @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artist)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Bpm)
@@ -53,9 +51,7 @@
             @Html.DisplayFor(modelItem => item.HasAcousticInstruments)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.DisplayFor(modelItem => item.IsItABanger)
         </td>
     </tr>
 }

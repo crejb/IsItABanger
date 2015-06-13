@@ -246,6 +246,7 @@
     <Content Include="Views\Songs\Result.cshtml" />
     <Content Include="Views\Shared\_LayoutSimple.cshtml" />
     <Content Include="Views\Shared\_LayoutFullPage.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\YesNo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
