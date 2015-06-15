@@ -1,32 +1,22 @@
 ﻿@model IEnumerable<IsItABangerWeb.Models.Song>
 
 @{
-    ViewBag.Title = "See all songs";
+    ViewBag.Title = "Tested Songs";
 }
+
+<div class="page-header">
+    <h2>The Bangers <small>and not bangers</small></h2>
+</div>
 
 <table class="table">
     <tr>
-        <th>
-            Song
-        </th>
-        <th>
-            Artist
-        </th>
-        <th>
-            BPM
-        </th>
-        <th>
-            Drops
-        </th>
-        <th>
-            Dope?
-        </th>
-        <th>
-            Acoustic Instruments
-        </th>
-        <th>
-            Banger?
-        </th>
+        <th>@Html.ActionLink("Song", "Index", new {SortBy="Song", SortAsc=ViewBag.SortAsc["song"]})</th>
+        <th>@Html.ActionLink("Artist", "Index", new { SortBy = "Artist", SortAsc = ViewBag.SortAsc["artist"] })</th>
+        <th>@Html.ActionLink("BPM", "Index", new { SortBy = "BPM", SortAsc = ViewBag.SortAsc["bpm"] })</th>
+        <th>@Html.ActionLink("Drops", "Index", new { SortBy = "Drops", SortAsc = ViewBag.SortAsc["drops"] })</th>
+        <th>@Html.ActionLink("Dope?", "Index", new { SortBy = "Dope", SortAsc = ViewBag.SortAsc["dope"] })</th>
+        <th>@Html.ActionLink("Acoustic Instruments?", "Index", new { SortBy = "acousticinstruments", SortAsc = ViewBag.SortAsc["acousticinstruments"] })</th>
+        <th>@Html.ActionLink("Banger?", "Index", new { SortBy = "Banger", SortAsc = ViewBag.SortAsc["banger"] })</th>
     </tr>
 
 @foreach (var item in Model) {

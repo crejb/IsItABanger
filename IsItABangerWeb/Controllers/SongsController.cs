@@ -28,9 +28,56 @@ namespace IsItABangerWeb.Controllers
         }
 
         // GET: Songs
-        public ActionResult Index()
+        public ActionResult Index(string sortBy = "", bool sortAsc = true)
         {
-            return View(db.Songs.ToList());
+            Func<Song, object> orderBy = null;
+            switch (sortBy.ToLower())
+            {
+                case "song":
+                    orderBy = s => s.Name;
+                    break;
+                case "artist":
+                    orderBy = s => s.Artist;
+                    break;
+                case "bpm":
+                    orderBy = s => s.Bpm;
+                    break;
+                case "drops":
+                    orderBy = s => s.Drops;
+                    break;
+                case "dope":
+                    orderBy = s => s.DropsAreDope;
+                    break;
+                case "acousticinstruments":
+                    orderBy = s => s.HasAcousticInstruments;
+                    break;
+                case "banger":
+                    orderBy = s => s.IsItABanger;
+                    break;
+                default:
+                    sortBy = "song";
+                    orderBy = s => s.Name;
+                    break;
+            }
+
+            var songs = sortAsc 
+                ? db.Songs.OrderBy(orderBy) 
+                : db.Songs.OrderByDescending(orderBy);
+
+            var nextSortDirAsc = new Dictionary<string, bool>
+            {
+                {"song", true},
+                {"artist", true},
+                {"bpm", true},
+                {"drops", true},
+                {"dope", true},
+                {"acousticinstruments", true},
+                {"banger", true}
+            };
+            nextSortDirAsc[sortBy.ToLower()] = !sortAsc;
+
+            ViewBag.SortAsc = nextSortDirAsc;
+            return View(songs.ToList());
         }
 
         // POST: Songs/Result
@@ -46,7 +93,7 @@ namespace IsItABangerWeb.Controllers
                 return View(song);
             }
 
-            return View(song);
+            return RedirectToAction("Index", "Home", song);
         }
 
         // POST: Songs/Create

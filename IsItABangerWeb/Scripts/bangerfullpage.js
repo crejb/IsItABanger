@@ -7,6 +7,18 @@
 
     $('.banger-scroll-down').each(function (button) {
         $(this).on('click', function (e) {
+            // When clicking the Next button, validate the field before scrolling to the next section.
+            // The field to validate is stored in the data-banger-valfield attribute
+            var fieldToValidate = $(this).attr('data-banger-valfield');            
+            if (fieldToValidate != null)
+            {
+                var isValid = $('#' + fieldToValidate).valid();
+                if (!isValid)
+                {
+                    return;
+                }
+            }
+            
             $.fn.fullpage.moveSectionDown();
         })
     });
