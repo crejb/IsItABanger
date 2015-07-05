@@ -5,45 +5,8 @@
 }
 
 <div class="page-header">
-    <h2>The Bangers <small>and not bangers</small></h2>
+    <h2 class="text-primary">The Bangers <small class="text-muted">and the fizzers</small></h2>
 </div>
 
-<table class="table">
-    <tr>
-        <th>@Html.ActionLink("Song", "Index", new {SortBy="Song", SortAsc=ViewBag.SortAsc["song"]})</th>
-        <th>@Html.ActionLink("Artist", "Index", new { SortBy = "Artist", SortAsc = ViewBag.SortAsc["artist"] })</th>
-        <th>@Html.ActionLink("BPM", "Index", new { SortBy = "BPM", SortAsc = ViewBag.SortAsc["bpm"] })</th>
-        <th>@Html.ActionLink("Drops", "Index", new { SortBy = "Drops", SortAsc = ViewBag.SortAsc["drops"] })</th>
-        <th>@Html.ActionLink("Dope?", "Index", new { SortBy = "Dope", SortAsc = ViewBag.SortAsc["dope"] })</th>
-        <th>@Html.ActionLink("Acoustic Instruments?", "Index", new { SortBy = "acousticinstruments", SortAsc = ViewBag.SortAsc["acousticinstruments"] })</th>
-        <th>@Html.ActionLink("Banger?", "Index", new { SortBy = "Banger", SortAsc = ViewBag.SortAsc["banger"] })</th>
-    </tr>
+@Html.Partial("_Songs", Model)
 
-@foreach (var item in Model) {
-    var rowClass = item.IsItABanger ? "success" : "danger";
-    <tr class="@rowClass">
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Artist)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bpm)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Drops)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DropsAreDope)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasAcousticInstruments)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsItABanger)
-        </td>
-    </tr>
-}
-
-</table>

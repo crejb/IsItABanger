@@ -77,6 +77,12 @@ namespace IsItABangerWeb.Controllers
             nextSortDirAsc[sortBy.ToLower()] = !sortAsc;
 
             ViewBag.SortAsc = nextSortDirAsc;
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Songs", songs.ToList());
+            }
+
             return View(songs.ToList());
         }
 
