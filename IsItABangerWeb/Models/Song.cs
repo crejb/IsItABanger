@@ -32,6 +32,7 @@ namespace IsItABangerWeb.Models
         [UIHint("YesNo")]
         public bool HasAcousticInstruments { get; set; }
 
+        [UIHint("YesNo")]
         public bool IsItABanger { get; set; }
     }
 

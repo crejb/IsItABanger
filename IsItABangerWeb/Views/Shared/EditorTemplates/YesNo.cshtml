@@ -1,10 +1,29 @@
 ﻿@model bool?
 
 <fieldset>
-    @Html.RadioButtonFor(model => model, true, new { id = "radio-yes" })
-    @Html.Label("radio-yes", "Yes")
+    @{
+        var yesAttrs = new Dictionary<string, object>();
+        var noAttrs = new Dictionary<string, object>();
 
-    @Html.RadioButtonFor(model => model, false, new { id = "radio-no" })
-    @Html.Label("radio-no", "No")
+        yesAttrs.Add("id", ViewData.TemplateInfo.GetFullHtmlFieldId("") + "Yes");
+        noAttrs.Add("id", ViewData.TemplateInfo.GetFullHtmlFieldId("") + "No");
+
+        if (Model.HasValue && Model.Value)
+        {
+            yesAttrs.Add("checked", "checked");
+        }
+        else
+        {
+            // Default to False
+            noAttrs.Add("checked", "checked");
+        }
+    }
+    <div class="buttonset-option">
+        @Html.RadioButtonFor(x => x, "true", yesAttrs)
+        @Html.Label(ViewData.TemplateInfo.GetFullHtmlFieldId("") + "Yes", "Yes")
+    </div>
+    <div class="buttonset-option">
+        @Html.RadioButtonFor(x => x, "false", noAttrs)
+        @Html.Label(ViewData.TemplateInfo.GetFullHtmlFieldId("") + "No", "No")
+    </div>
 </fieldset>
-
