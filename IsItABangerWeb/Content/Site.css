@@ -14,25 +14,54 @@ textarea {
 
 body {
   padding-top: 50px;
+  background:black;
 }
-/*@media (max-width: 979px) {
-  body {
-    padding-top: 0px;
-  }
+
+.text-primary{
+    color:white;
+}
+
+a{
+    color:grey;
+}
+
+a:hover{
+    color:white;
+}
+
+a:active{
+    color:white;
+}
+
+/*a:visited{
+    color:dimgray;
 }*/
 
-/*#Banner {
- top: 0;
- position: fixed;
- background-color: #fff;
- height: 40px;
- width: 100%;
- z-index: 1030;
-}*/
+tr.pass{
+    background-color:#31641B !important;
+}
 
-.h-stretch {
-    background-color:rebeccapurple;
-    position:absolute;
-    left:0;
-    right:0;
+tr.fail{
+    background-color:#9A1F1F !important;
+}
+
+
+/* Override the default hover colour (white) for the Success rows */
+.table-hover tbody tr.pass:hover td, .table-hover tbody tr.pass:hover th {
+  background-color:#5BB65B;
+}
+
+/* Override the default hover colour (white) for the Fail rows */
+.table-hover tbody tr.fail:hover td, .table-hover tbody tr.fail:hover th {
+  background-color:#F76666;
+}
+
+/* Disable hover on the header row, by using the bg colour for the hover colour */
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background-color: inherit;
+}
+
+.margin-right{
+    margin-right:60px;
 }
