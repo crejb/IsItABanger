@@ -1,14 +1,15 @@
 ﻿@model IsItABangerWeb.Models.Song
 
 @{
-    Layout = "~/Views/Shared/_LayoutSimple.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Result";
-    ViewBag.LayoutBackground = Model.IsItABanger ? "green" : "red";
-    string bangerText = Model.IsItABanger ? "BANGER" : "NOT A BANGER";
+    string bangerTextBackground = Model.IsItABanger ? "green" : "red";
+    string bangerText = Model.IsItABanger ? "A BANGER" : "NOT A BANGER";
 }
 
 <div class="center-block" style="text-align:center">
-    <h2>@bangerText</h2>
+    <h3 class="text-muted">This song is...</h3>
+    <h2 style="color:@bangerTextBackground">@bangerText</h2>
 </div>
 
 @using (Html.BeginForm("Create", "Songs", FormMethod.Post))
@@ -21,49 +22,61 @@
             @Html.HiddenFor(model => model.IsItABanger)
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Bpm, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.Bpm, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Bpm, htmlAttributes: new { @class = "control-label text-primary" })
+            </div>
+            <div class="col-md-8 text-primary">
+                @Html.DisplayFor(model => model.Bpm, new { htmlAttributes = new { @class = "form-control text-primary" } })
                 @Html.HiddenFor(model => model.Bpm)
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Drops, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.Drops, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Drops, htmlAttributes: new { @class = "control-label text-primary" })
+            </div>
+            <div class="col-md-8 text-primary">
+                @Html.DisplayFor(model => model.Drops, new { htmlAttributes = new { @class = "form-control text-primary" } })
                 @Html.HiddenFor(model => model.Drops)
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DropsAreDope, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.DropsAreDope, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.DropsAreDope, htmlAttributes: new { @class = "control-label text-primary" })
+            </div>
+            <div class="col-md-8 text-primary">
+                @Html.DisplayFor(model => model.DropsAreDope, new { htmlAttributes = new { @class = "form-control text-primary" } })
                 @Html.HiddenFor(model => model.DropsAreDope)
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.HasAcousticInstruments, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.HasAcousticInstruments, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.HasAcousticInstruments, htmlAttributes: new { @class = "control-label text-primary" })
+            </div>
+            <div class="col-md-8 text-primary">
+                @Html.DisplayFor(model => model.HasAcousticInstruments, new { htmlAttributes = new { @class = "form-control text-primary" } })
                 @Html.HiddenFor(model => model.HasAcousticInstruments)
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label text-primary" })
+            </div>
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Artist, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Artist, htmlAttributes: new { @class = "control-label text-primary" })
+            </div>
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.Artist, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Artist, "", new { @class = "text-danger" })
             </div>
