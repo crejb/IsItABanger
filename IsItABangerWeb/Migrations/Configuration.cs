@@ -30,8 +30,8 @@ namespace IsItABangerWeb.Migrations
 
             context.Songs.AddOrUpdate(
                 s => s.Name,
-                new Song { Name = "I Will Wait", Bpm = 80, Drops = 0, DropsAreDope = false, HasAcousticInstruments = true, IsItABanger=false },
-                new Song { Name = "Electroshark", Bpm = 120, Drops = 12, DropsAreDope = true, HasAcousticInstruments = false, IsItABanger = true}
+                new Song { Name = "I Will Wait", Artist = "Mumford and Sons", Bpm = 80, Drops = 0, DropsAreDope = false, HasAcousticInstruments = true, IsItABanger=false },
+                new Song { Name = "Electroshark", Artist = "Yeah", Bpm = 120, Drops = 12, DropsAreDope = true, HasAcousticInstruments = false, IsItABanger = true}
             );
         }
     }

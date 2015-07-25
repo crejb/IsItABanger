@@ -91,15 +91,22 @@ namespace IsItABangerWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Result([Bind(Include = "Bpm,Drops,DropsAreDope,HasAcousticInstruments")] Song song)
+        public ActionResult Result([Bind(Include = "Bpm,Drops,DropsAreDope,HasAcousticInstruments")] NewSongViewModel newSong)
         {
             if (ModelState.IsValid)
             {
+                var song = new Song
+                {
+                    Bpm = newSong.Bpm,
+                    Drops = newSong.Drops,
+                    DropsAreDope = newSong.DropsAreDope,
+                    HasAcousticInstruments = newSong.HasAcousticInstruments
+                };
                 _bangerCalculator.SetBanger(song);
                 return View(song);
             }
 
-            return RedirectToAction("Index", "Home", song);
+            return RedirectToAction("Index", "Home", newSong);
         }
 
         // POST: Songs/Create
