@@ -162,16 +162,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SongsController.cs" />
+    <Compile Include="DataAccess\BangerDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506111110108_SongUpdate.cs" />
-    <Compile Include="Migrations\201506111110108_SongUpdate.Designer.cs">
-      <DependentUpon>201506111110108_SongUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507250615157_SongFieldsRequired.cs" />
-    <Compile Include="Migrations\201507250615157_SongFieldsRequired.Designer.cs">
-      <DependentUpon>201507250615157_SongFieldsRequired.cs</DependentUpon>
+    <Compile Include="Migrations\201509060344168_Initial.cs" />
+    <Compile Include="Migrations\201509060344168_Initial.Designer.cs">
+      <DependentUpon>201509060344168_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -266,11 +263,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506111110108_SongUpdate.resx">
-      <DependentUpon>201506111110108_SongUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507250615157_SongFieldsRequired.resx">
-      <DependentUpon>201507250615157_SongFieldsRequired.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509060344168_Initial.resx">
+      <DependentUpon>201509060344168_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
